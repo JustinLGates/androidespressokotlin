@@ -31,13 +31,13 @@ class MainActivityVisabilityTest{
     @Test
     fun inputVisable(){
         val activityScenario = ActivityScenario.launch(MainActivity::class.java)
-        onView(withId(R.id.usernameInput)).check(matches(isDisplayed()))
+        onView(withId(R.id.username_edit_field)).check(matches(isDisplayed()))
     }
     @Test
     fun enterUserNameForGreeting(){
         val activityScenario = ActivityScenario.launch(MainActivity::class.java)
-        onView(withId(R.id.usernameInput)).perform(typeText("Justin"))
-        onView(withId(R.id.greetUserBtn)).perform(click())
+        onView(withId(R.id.username_edit_field)).perform(typeText("Justin"))
+        onView(withId(R.id.login_button)).perform(click())
         onView(withId(R.id.greeting)).check(matches(withText("Hello Justin!")))
     }
 

@@ -21,14 +21,14 @@ class MainActivity : AppCompatActivity() {
         usergreeting.text = "Please Enter your name"
 
 
-        val greetBtn = findViewById<Button>(R.id.greetUserBtn)
+        val greetBtn = findViewById<Button>(R.id.login_button)
         greetBtn.setOnClickListener{
            changeText(usergreeting);
         }
 
     }
 fun changeText( textview : TextView){
-    val userName = findViewById<TextView>(R.id.usernameInput).text
+    val userName = findViewById<TextView>(R.id.username_edit_field).text
     textview.text = "Hello $userName!"
 }
 
