@@ -5,7 +5,8 @@ import org.junit.runners.Suite
 
 @RunWith(Suite::class)
 @Suite.SuiteClasses(
-        LoginTest::class,
+        LoginTest.TestCases::class,
+        SecondaryActivityTests.TestCases::class
 )
 class FullTestSuite{
 

@@ -24,8 +24,8 @@ class LoginTest {
         fun enterPassword(password: String){
             TestLoginComponent().enterPassword(password)
         }
-        fun clickLogin(success: Boolean){
-            TestLoginComponent().clickLoginButton(success)
+        fun clickLogin(){
+            TestLoginComponent().clickLoginButton()
         }
         fun navigateToSecondaryActivity(){
             TestLoginComponent().clickSecondaryActivity()
@@ -45,23 +45,19 @@ class LoginTest {
         }
 
         private val loginButtonId = R.id.login_button
-        private val mainActivity = R.id.Main
-        private val secondaryActivity = R.id.Secondary
-        fun clickLoginButton(success: Boolean){
+
+
+        fun clickLoginButton(){
             onView(withId(loginButtonId)).perform(click())
-            when(success){
-                true -> onView(withId(secondaryActivity)).check(matches(isDisplayed()))
-                false -> onView(withId(mainActivity)).check(matches(isDisplayed()))
-            }
         }
 
+        private val secondaryActivity = R.id.Secondary
         private val BtnNavSecondaryActivity = R.id.btn_nav_secondary
         fun  clickSecondaryActivity(){
             onView(withId(BtnNavSecondaryActivity )).perform(click())
             onView(withId(secondaryActivity)).check(matches(isDisplayed()))
         }
     }
-
 
     class TestCases() {
         @get: Rule
@@ -70,9 +66,8 @@ class LoginTest {
         fun loginToApp() {
             Login.enterUsername("Justin")
             Login.enterPassword("123456789")
-            Login.clickLogin(true)
+            Login.clickLogin()
             Login.navigateToSecondaryActivity()
         }
-
     }
 }
