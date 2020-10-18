@@ -7,6 +7,6 @@ import org.junit.runners.Suite
 @Suite.SuiteClasses(
         LoginTest::class,
 )
-class ActivityTestSuite{
+class FullTestSuite{
 
 }
